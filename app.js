@@ -6,7 +6,7 @@ const validate = require("./public/utils/logindatavalidate");
 
 // console.log(validate.valLogin());
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 let a;
 
 app.use(express.static(path.join(__dirname,"public")));
