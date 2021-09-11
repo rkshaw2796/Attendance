@@ -12,10 +12,11 @@ let a;
 app.use(express.static(path.join(__dirname,"public")));
 
 app.get("/signin",(req,res) =>{
-    res.redirect("/");
+    
     a = req.query;
     var result = validate.valLogin(a);
     console.log(result);
+    res.send(result);
     // let b = JSON.stringify(a);
     // console.log(b);
     // console.log(JSON.parse(b));
