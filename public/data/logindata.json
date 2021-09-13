@@ -1,16 +1,1 @@
-{
-  "user": [
-    {
-      "name": "Rahul Shaw",
-      "email": "rkshaw2796@gmail.com",
-      "mobile": "8271252057",
-      "password": "Rabina$13"
-    },
-    {
-      "name": "Rani Shaw",
-      "email": "ranishaw@gmail.com",
-      "mobile": "1234567890",
-      "password": "Rani@1998"
-    }
-  ]
-}
+{"user":[{"name":"Rahul Shaw","email":"rkshaw2796@gmail.com","mobile":"8271252057","password":"Rabina$13"},{"name":"Rani Shaw","email":"ranishaw@gmail.com","mobile":"1234567890","password":"Rani@1998"},{"name":"Rabina Shaw","email":"rabinashaw@gmail.com","mobile":"9876543210","password":"Rabina@2001"}]}

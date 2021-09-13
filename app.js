@@ -10,10 +10,13 @@ const port = process.env.PORT || 5000;
 let a;
 
 app.use(express.static(path.join(__dirname,"public")));
+app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
-app.get("/signin",(req,res) =>{
+app.post("/signin",(req,res) =>{
     
-    a = req.query;
+    a = req.body;
+    console.log(a);
     var result = validate.valLogin(a);
     console.log(result);
     res.send(result);
@@ -24,9 +27,9 @@ app.get("/signin",(req,res) =>{
 });
 
 
-app.get("/signup",(req,res) =>{
+app.post("/signup",(req,res) =>{
     res.redirect("/");
-    a = req.query;
+    a = req.body;
     var result = validate.newsignup(a);
     console.log(result);
     // let b = JSON.stringify(a);
