@@ -21,10 +21,10 @@ newsignup : function (a){
 
 },
 
-valLogin : async function(a){
+valLogin : function(a,res){
 
     let result = false;
-    await MongoClient.connect(url, {useNewUrlParser : true}, (error,client) =>{
+    MongoClient.connect(url, {useNewUrlParser : true}, (error,client) =>{
         if(error){
             return console.log("Unable to Connect database Attendance");
         }
@@ -32,21 +32,17 @@ valLogin : async function(a){
         console.log("Connection Establised !!");
 
         const db = client.db(database);
+
         db.collection("users").findOne({email: a.email}, (error,user)=>{
             console.log(user.password + " " +a.password);
         if(user.password === a.password)
         {
             console.log(user.password + " " +a.password);
             result = true;
+            res.send("Logged In!!");
         }
         });
-
-        // console.log(user);
-        // if(user){
-        //     console.log("Successfully Login!!");
-        // }
     });
-    console.log("Inside function")
 }
 
 };

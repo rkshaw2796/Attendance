@@ -18,10 +18,8 @@ app.post("/signin",(req,res) =>{
     
     a = req.body;
     // console.log(a);
-    let result = mongovalidate.valLogin(a);
-    console.log(result);
-    result.then(final => console.log(final));
-    res.redirect("/");
+    mongovalidate.valLogin(a,res);
+    // console.log(result);
     // let b = JSON.stringify(a);
     // console.log(b);
     // console.log(JSON.parse(b));
