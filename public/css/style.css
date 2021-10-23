@@ -1,9 +1,14 @@
 #header{
     text-align:center;
-    height:150px
+    height:100px
 }
 
-#loginmain{
+#main{
     border-style: outset;
     padding : 40px;
+}
+
+.error{
+    font-size: x-small;
+    color: red;
 }

@@ -7,6 +7,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <link rel = "stylesheet" href = "./css/style.css">
+        <script src = "./script/script.js"></script>
     </head>
     <body>
 
@@ -15,35 +16,38 @@
 
         <div class ="container">
             <div class ="row">
-                <div class ="col-sm"></div>
-                <div class ="col-sm" id = "loginmain">
+            <div class ="col-sm"></div>
+            <div class ="col-sm" id = "main">
+                <div class = "error" id ="errormsg">{{errormsg}}</div>
                 <form action = "signup" method = "POST">
                 <div class ="form-group">
                     <label for= "name">Name:</label>
-                    <input type=text id ="name" class ="form-control" name ="name"> 
+                    <input type=text id ="name" class ="form-control" name ="name" onchange = "namevalidate()">
+                    <div id = "nameerror" class ="error"><br/></div>
                 </div>
                 <div class ="form-group">
                     <label for="email">Email:</label>
-                    <input type ="text" class ="form-control" id= "email" name ="email">
+                    <input type ="text" class ="form-control" id= "email" name ="email" onchange="emailvalidate()">
+                    <div id = "emailerror" class ="error"><br/></div>
                 </div>
                 <div class ="form-group">
                     <label for="mobile">Mobile:</label>
-                    <input type ="text" class ="form-control" id= "mobile" name ="mobile">
+                    <input type ="text" class ="form-control" id= "mobile" name ="mobile" onchange="mobilevalidate()">
+                    <div id = "mobileerror" class ="error"><br/></div>
                 </div>
                 <div class ="form-group">
                     <label for="pass">Password:</label>
-                    <input type ="password" class ="form-control" id= "pass" name ="password">
+                    <input type ="password" class ="form-control" id= "pass" name ="password" onchange="passvalidate()">
+                    <div id = "passerror" class ="error"><br/></div>
                 </div></br>
 
-                <button type= "submit" class="btn btn-primary">Sign Up</button>
+                <button type= "submit" id = "signup" class="btn btn-primary" disabled>Sign Up</button>
                 </form>
                 <br/>
 
                 <div style="text-align: center;"><a href = "/">Go to Sign In</a></div>
-                
-                </div>
-                
-                <div class ="col-sm"></div>
+            </div>
+            <div class ="col-sm"></div>
             </div>
         </div>
     

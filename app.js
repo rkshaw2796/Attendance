@@ -37,9 +37,8 @@ app.post("/signin",(req,res) =>{
 
 
 app.post("/signup",(req,res) =>{
-    res.redirect("/");
     a = req.body;
-    mongovalidate.newsignup(a);
+    mongovalidate.newsignup(a,res);
     // console.log(result);
     // let b = JSON.stringify(a);
     // console.log(b);
